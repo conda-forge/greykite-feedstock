@@ -1,6 +1,6 @@
 {% set name = "greykite" %}
-{% set version = "1.0.0" %}
-{% set python_min = '3.10' %}
+{% set version = "1.1.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -8,14 +8,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/greykite-{{ version }}.tar.gz
-  sha256: 27c74119900b186361cb4ccdd040eaf9383bc41f7b3781706600891df2c7c6e3
+  sha256: 14a163c04f3a81defb05b95d894a6565516c133f43b373aa999b630d17882bd0
 
 build:
   entry_points:
     - greykite=greykite.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
